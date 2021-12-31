@@ -19,6 +19,8 @@ import base from "./modules/base.js"
 import axios from "./modules/axios.js"
 import tabsView from "./modules/tabsView.js"
 
+import plug from "./modules/plug/index.js"
+
 import {status} from "./modules/status.js"
 const routes = [
 	// 
@@ -80,6 +82,9 @@ const routes = [
 	element,//element
 	
 	base,//基础
+	
+	
+	plug,
 	
 
 ]

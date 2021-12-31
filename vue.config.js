@@ -50,6 +50,14 @@ module.exports = {
 				// '@components': path.resolve(__dirname, './src/components'),
 			}
 		}
+		//插件
+		config.plugins.push(
+			new webpack.ProvidePlugin({
+		        $: "jquery",
+		        jQuery: "jquery",
+		        "windows.jQuery": "jquery"
+		      })
+		);
 
 	},
 	chainWebpack: (config) => {
