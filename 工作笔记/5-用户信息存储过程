@@ -1,0 +1,23 @@
+1 在进入路由的时候                                                               在@/router/index.js
+	<1>如果本地存在 token
+	<2>并且vuex的 store.state.user.info.username 不存在的时候
+	   发起获取用户信息的请求,然后存到 store.state.user.info
+	   
+	   
+2 当用户点击退出登录的时候                                                        在@/layout/components/headerTop/index.vue
+    <1>移除本地token
+	<2>重置 vuex 的 store.state.user.info --->(  this.$store.commit("user/info_fn", {username:'',roleArr:[]})  )
+	<3>跳转登录页
+	<4>清空pageStack
+	
+3 当用户在登录页面点击登录的时候                                                   在@/views/status/login.vue
+   <1>添加本地token
+   <2>用户信息存到 store.state.user.info  --->(  store.commit("user/info_fn", res.data)  )
+   <3>获取上一个路由然后跳转
+   
+4 当发起一个请求是401的时候(权限不足) 显示弹窗 ,用户点击确定                         在@/axios/request.js
+  <1>移除本地token
+  <2>重置 vuex 的 store.state.user.info --->(  this.$store.commit("user/info_fn", {username:'',roleArr:[]})  )
+  <3>跳转登录页
+  <4>清空pageStack
+	

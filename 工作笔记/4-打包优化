@@ -1,0 +1,14 @@
+npm install compression-webpack-plugin@6.0.1 --save-dev
+
+然后 服务器启用gzip：
+
+
+asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets:
+  static/js/chunk-vendors.91c8e948.js.gz (268 KiB)
+
+  File                                      Size             Gzipped
+
+  dist\static\js\about.c9b704d9.js          3.36 KiB         1.36 KiB
+  dist\static\js\chunk-2d222773.37883118    0.29 KiB         0.23 KiB

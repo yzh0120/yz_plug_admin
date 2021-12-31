@@ -1,0 +1,28 @@
+ 刚开始的项目:
+
+ File                                 Size               Gzipped
+
+  dist\js\chunk-vendors.b359156e.js    112.30 KiB         39.57 KiB
+  dist\js\app.f5a0dff9.js              5.79 KiB           2.21 KiB
+  dist\js\about.83abb276.js            0.44 KiB           0.31 KiB
+  dist\css\app.20847301.css            0.42 KiB           0.26 KiB
+  ---------------------------------------------------------------------------------
+  
+  加了 element 按需引入
+   File                                   Size              Gzipped
+  
+    dist\js\chunk-vendors.fe98cd87.js      745.46 KiB        189.56 KiB
+    dist\js\app.7ac52d2c.js                7.98 KiB          3.12 KiB
+    dist\js\about.31c3cfd4.js              0.44 KiB          0.31 KiB
+    dist\css\chunk-vendors.67831fe3.css    235.34 KiB        35.87 KiB
+    dist\css\app.20847301.css              0.42 KiB          0.26 KiB
+	---------------------------------------------------------------------------------
+	
+	加了 vxe-table 按需引入
+	  File                                   Size              Gzipped
+	
+	  dist\js\chunk-vendors.212e95a7.js      843.22 KiB        223.83 KiB
+	  dist\js\app.5f0f2637.js                8.09 KiB          3.16 KiB
+	  dist\js\about.9be635ca.js              0.44 KiB          0.31 KiB
+	  dist\css\chunk-vendors.fe729a74.css    244.28 KiB        37.09 KiB
+	  dist\css\app.20847301.css              0.42 KiB          0.26 KiB

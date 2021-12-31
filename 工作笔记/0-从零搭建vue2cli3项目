@@ -1,0 +1,61 @@
+< 1 > 安装 nodejs
+
+< 2 > 打开cmd 输入命令配置镜像站: npm config set registry = http://registry.npm.taobao.org   
+
+< 3 > 检查一下镜像站行不行命令: npm config get registry
+
+< 4 > 安装脚手架cli npm i -g @vue/cli@3.0.3     npm uni -g @vue/cli@3      (npm i -g vue-cli@2.9.6     (vue cli 2))
+
+< 5 >
+	vue create template
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	选择 Manually(手动)
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	>
+	( * ) Babel 将脚手架中浏览器不认识的一切东西翻译为浏览器认识的。 必选 相当于 翻译官
+
+	() TypeScript 更严格的javascript， ng框架使用
+
+	() Progressive Web App(PWA) Support
+
+	( * ) Router 必选
+
+	() Vuex 为下一阶段做登录 / 购物车做准备
+
+	() CSS Pre - processors
+
+	() Linter / Formatter 代码格式检查工具， 要求过于变态
+
+	() Unit Testing
+
+	() E2E Testing
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	空格是选中 / 取消
+	回车确定
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	Use history modefor router ? (选择路由模式为history) 
+	y
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	Where do you prefer placing config for Babel, PostCSS, ESLint, etc. ? (Use arrow keys)
+	把babel, postcss, eslint这些配置文件放哪， 这里随便选， 我选择放在独立文件夹 In dedicated config files
+	In dedicated config files
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	Save this as a preset for future projects ?
+	n
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	vue脚手架安装
+	https: //blog.csdn.net/aweo960421621/article/details/101973604
+	
+	
+	---------------------------------------------------------卸载脚手架
+	第一步 查看自己脚手架版本
+	
+	vue --version
+	1
+	第二步：卸载原来的脚手架
+	
+	npm uninstall vue-cli -g
+	1
+	第三步：安装脚手架
+	
+	npm i @vue/cli -g
