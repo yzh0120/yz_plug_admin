@@ -17,6 +17,12 @@ Vue.use(new VueSocketIO({
   },
 }))
 
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
+// //引入样式
+// // import 'swiper/css/swiper.css'
+// import 'swiper/dist/css/swiper.css'
+// Vue.use(VueAwesomeSwiper, /* { 全局组件的默认选项 } */)
+
 
 import common from  "@/scss/common/variable.scss"
 import layout from  "@/scss/layout/variable.scss"

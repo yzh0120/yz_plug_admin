@@ -26,7 +26,7 @@ export default{
             this.alertData.field = true
         },
         event(e){
-            if (e.event == "alert") {
+            if (e.event == "confirm") {
 					this.alertData.field = false
 					console.log("点击了确认按钮");
 				}

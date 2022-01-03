@@ -31,7 +31,7 @@ data：{
 			},
 			confirm() {
 				this.$emit("event", {
-					event: 'alert'
+					event: 'confirm'
 				})
 			},
 			close() {
