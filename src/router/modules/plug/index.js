@@ -3,6 +3,7 @@ let layout = () => import("@/layout/index.vue")
 import flow from "./flow.js"
 import swiper from "./swiper.js"
 import vueSuperFlow from "./vueSuperFlow.js"
+import map from "./map.js"
 export default { 
     path: '/plug',//修改
     name: 'plug',//修改
@@ -14,6 +15,7 @@ export default {
     children: [
 		flow,
 		swiper,
-		vueSuperFlow
+		vueSuperFlow,
+		map
     ]
 }

@@ -17,6 +17,13 @@ Vue.use(new VueSocketIO({
   },
 }))
 
+
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+  ak: 'bNm1NF0Hri3kO9MLsYZRU5siYrMIS9GQ' //你申请的key
+})
+
+
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // //引入样式
 // // import 'swiper/css/swiper.css'
