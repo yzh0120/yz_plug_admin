@@ -1,1 +1,15 @@
-https://zizorg.github.io/v-charts/#/props
+中文网址 https://zizorg.github.io/v-charts/#/props
+
+<!-- 
+setOption({ })相当于 options
+https://echarts.apache.org/zh/option.html#color 
+ 
+ -->
+ 
+ 
+<!-- 
+ echarts——各个配置项详细说明总结
+ 
+ https://www.cnblogs.com/1996zy/p/8963385.html
+ 
+ -->
