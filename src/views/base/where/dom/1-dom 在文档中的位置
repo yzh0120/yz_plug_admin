@@ -27,6 +27,10 @@
    scrollLeft       可视区的左部到被隐藏去的左部的距离
    scrollRight      可视区的右部到被隐藏去的右部的距离
    
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 05f3cb5b6d8af7f6718eed47934c8bb0591b7018
    ps:
    页面具有 DTD，或者说指定了 DOCTYPE 时，使用 document.documentElement。
    
