@@ -1,8 +1,7 @@
 <template>
-	<page>
-		<!-- 文件列表 -->
-		<file-table :projectId="id" :upload-list="uploadList" v-if="id"></file-table>
-	</page>
+	<file-table :uploadList="uploadList" projectId="1231231231312">
+		
+	</file-table>
 </template>
 
 <script>
@@ -10,46 +9,26 @@
 		data(){
 			return {
 				uploadList: [
-					{
-					  name: "1.保函额度合同",
-					  taskName: "保函额度合同",
-					  detail: [],
-					  type:['pdf'],
-					  num:1
-					},
-					{
-					  name: "2.额度保证反担保文件",
-					  taskName: "额度保证反担保文件",
-					  detail: [],
-					},
+				  {
+				    name: "1.开立保函委托合同或开立保函确认书（额度项下）",
+				    taskName: "开立保函委托合同或开立保函确认书",
+				    detail: [],
+				  },
+				  {
+				    name: "2.保证反担保合同（非必传）",
+				    taskName: "保证反担保合同",
+				    detail: [],
+				  },
+				  {
+				    name: "3.其他法律文件（非必传）",
+				    taskName: "其他法律文件",
+				    detail: [],
+				  },
 				],
-				id:"",
 			}
-		},
-		mounted() {
-			this.id = "123456"
-			
 		}
 	}
 </script>
 
 <style>
 </style>
-<!-- 
-let checkOK = true;
-      try {
-        this.uploadList.forEach((item) => {
-          if (item.require) {
-            if (item.detail.length == 0) {
-              this.$message.error(`请上传${item.name}`);
-              checkOK = false;
-              throw new Error("EndIterative");
-            }
-          }
-        });
-      } catch (e) {
-        if (e.message != "EndIterative") throw e;
-      }
-      if (!checkOK) return; 
- 
- -->

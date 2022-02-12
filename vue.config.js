@@ -7,8 +7,8 @@ function self_resolve(dir) {
 
 module.exports = {
 	publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
-	assetsDir: 'static', //打包后指定你的css/js/img/fonts等静态资源文件夹的打包后生成路径 在outputDir目录下
-	outputDir: 'dist', //打包后  输出文件目录
+	// assetsDir: 'static', //打包后指定你的css/js/img/fonts等静态资源文件夹的打包后生成路径 在outputDir目录下
+	// outputDir: 'dist', //打包后  输出文件目录
 	productionSourceMap: false, // 生产环境是否生成 sourceMap 文件
 	// 配置 webpack
 	configureWebpack: config => {
@@ -50,14 +50,6 @@ module.exports = {
 				// '@components': path.resolve(__dirname, './src/components'),
 			}
 		}
-		//插件
-		config.plugins.push(
-			new webpack.ProvidePlugin({
-		        $: "jquery",
-		        jQuery: "jquery",
-		        "windows.jQuery": "jquery"
-		      })
-		);
 
 	},
 	chainWebpack: (config) => {

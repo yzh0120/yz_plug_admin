@@ -72,12 +72,15 @@
 				// return item.name;
 			},
 			open(item){//展开目录     && item.children.length > 1
-				// if(item.children && item.meta.title){
+				//普通模式
+				// if(item.children && item.meta.title && (item.meta.title!="首页")){
 				// 	return true
 				// }else{
 				// 	return false
 				// }
 				
+				
+				//子节点只有一个展示的目录
 				if(this.onlyOneChilren(item.children)) {//只有一个显示的目录   (要么全部都是隐藏(没有children) 要么至少有两个)
 					return false
 				} else if(item.children){

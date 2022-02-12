@@ -199,6 +199,15 @@ export default {
 							},
 							component: () => import(/* webpackChunkName: "VCharts-histogram-other-six" */"@/views/VCharts/histogram/other/six.vue"),
 						},
+						{
+							path: 'seven',
+							name: "VCharts-histogram-other-seven",
+							meta: {
+								title: 'y轴的最小值与最大值',
+								icon: 'e67a',
+							},
+							component: () => import(/* webpackChunkName: "VCharts-histogram-other-seven" */"@/views/VCharts/histogram/other/seven.vue"),
+						},
 					]
 				}
 			],

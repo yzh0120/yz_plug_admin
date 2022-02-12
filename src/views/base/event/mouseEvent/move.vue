@@ -39,7 +39,7 @@ export default {
   },
   beforeDestroy() {
 	  //移除鼠标滚动事件
-	  this,$refs.container.removeEventListener('mousemove',this.mousemove_fn)
+	  this.$refs.container.removeEventListener('mousemove',this.mousemove_fn)
   }
 }
 </script>

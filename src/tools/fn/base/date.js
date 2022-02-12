@@ -9,6 +9,7 @@ function add(date,num,unit = "day",format="YYYY-MM-DD"){
 }
 //格式化时间对象
 function str(date,format="YYYY-MM-DD"){
+	//var date = new Date(date.replace(/-/g, "/").replace(/T/g, " "))
 	return dayjs(date).format(format)
 }
 

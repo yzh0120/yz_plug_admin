@@ -18,7 +18,9 @@
         <tagsView :keep-alive-component-instance="keepAliveComponentInstance" blankRouteName="blank"></tagsView>
       </el-header>
 
-      <el-main element-loading-text="页面加载中" v-loading="$store.state.router.elMainLoading">
+      <!-- <el-main element-loading-text="页面加载中" v-loading="$store.state.router.elMainLoading"> -->
+	  <el-main v-loading="$store.state.axios.axiosLoading.loading" :element-loading-text="$store.state.axios.axiosLoading.text">
+		  
         <!--此div是为了获取子节点的 keepAliveComponentInstance 组件实例 -->
         <div ref="keepAliveContainer" class="app_main" id="app_main" >
           <transition name="fade-transform" mode="out-in">

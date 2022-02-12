@@ -129,32 +129,6 @@ export default {
 		        icon: 'e63f;',
 		    }
 		},
-		{
-		    path: 'shu',//修改
-		    name: 'baseTable-shu',//修改
-		    component: () => import(/* webpackChunkName: "baseTable-shu" */ "@/views/base-table/shu.vue"),//修改
-		    meta: {
-		        title: 'element竖向table',//修改
-		        icon: 'e63f;',
-		    }
-		},
-		{
-		    path: 'shu-vxe',//修改
-		    name: 'baseTable-shu-vxe',//修改
-		    component: () => import(/* webpackChunkName: "baseTable-shu" */ "@/views/base-table/shu-vxe.vue"),//修改
-		    meta: {
-		        title: '竖向table-vxe',//修改
-		        icon: 'e63f;',
-		    }
-		},
-		{
-		    path: 'table',//修改
-		    name: 'baseTable-table',//修改
-		    component: () => import(/* webpackChunkName: "baseTable-table" */ "@/views/base-table/table.vue"),//修改
-		    meta: {
-		        title: '原生table',//修改
-		        icon: 'e63f;',
-		    }
-		},
+
     ]
 }

@@ -18,19 +18,6 @@ Vue.use(new VueSocketIO({
 }))
 
 
-import BaiduMap from 'vue-baidu-map'
-Vue.use(BaiduMap, {
-  ak: 'bNm1NF0Hri3kO9MLsYZRU5siYrMIS9GQ' //你申请的key
-})
-
-
-// import VueAwesomeSwiper from 'vue-awesome-swiper'
-// //引入样式
-// // import 'swiper/css/swiper.css'
-// import 'swiper/dist/css/swiper.css'
-// Vue.use(VueAwesomeSwiper, /* { 全局组件的默认选项 } */)
-
-
 import common from  "@/scss/common/variable.scss"
 import layout from  "@/scss/layout/variable.scss"
 // console.log(common,layout,"------------------",tablePage)

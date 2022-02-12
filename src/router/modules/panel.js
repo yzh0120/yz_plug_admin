@@ -5,7 +5,7 @@ export default {
     redirect: {name:"panel-base"},//修改
     component:  layout,
     meta: {
-        title: '封装panel',//修改
+        title: '封装伸缩框',//修改
         icon: 'e62a;',
     },
     children: [
@@ -14,7 +14,7 @@ export default {
             name: 'panel-base',//修改
             component: () => import(/* webpackChunkName: "panel-base" */ "@/views/panel/base.vue"),//修改
             meta: {
-                title: '基础panel',//修改
+                title: '基础伸缩框',//修改
                 icon: 'e627;',
             }
         },

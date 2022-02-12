@@ -112,7 +112,7 @@ export default {
 		}
 	},
     alertEvent(e){
-        if (e.event == "alert") {
+        if (e.event == "confirm") {
             let url = this.alertFormInfo.data.id ? "update" : "save";
             /*
              this.$api.table[url]({ pagerData: this.pagerData },other).then((res) => {

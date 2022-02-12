@@ -43,13 +43,14 @@ router.beforeEach(async (to, from, next) => {
 				if(!store.state.router.routes.length){//动态路由 角色路由是[],説明未登錄
 					let other = {
 						load:{
-							text:"正在获取用户信息"
+							text:"正在获取用户信息",
+							no:true,
 						}
 					}
 					let loadingInstance = Loading.service({
 					  lock: true,
-					  text: "加载中",
-					  spinner: "el-icon-loading",
+					  text: "多接口加载中",
+					  // spinner: "el-icon-loading",
 					  background: "rgba(255, 255, 255, 0.7)",
 					});
 					let arr = await Promise.all([

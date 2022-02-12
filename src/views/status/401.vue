@@ -30,7 +30,8 @@
 		name: 'noAuth',
 		data() {
 			return {
-				img401: require("@/assets/imgs/401.png")
+				// img401: require("@/assets/imgs/401.png")
+				img401:"https://s4.ax1x.com/2022/02/08/H1mK1A.png",
 			}
 		},
 		methods: {

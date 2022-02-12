@@ -1,5 +1,5 @@
 <template>
-	<file-table :uploadList="uploadList">
+	<file-table :uploadList="uploadList" projectId="1231231231312">
 		
 	</file-table>
 </template>

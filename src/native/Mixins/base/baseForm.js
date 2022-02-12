@@ -44,7 +44,7 @@ export default {
 			let temp = this.$fn.deepClone(formInfo.list)
 			temp.forEach((item)=>{
 				// item.disabled = false
-				if(this.$fn.type( item.disabled ) === "und"){
+				if(this.$fn.type( item.disabled ) === "und" || this.$fn.type( item.disabled ) === "null"){
 					item.disabled = false
 				}else{//定义了  则不动
 
@@ -57,7 +57,7 @@ export default {
 			let temp = this.$fn.deepClone(formInfo.list)
 			temp.forEach((item)=>{
 				// item.disabled = false
-				if(this.$fn.type( item.show ) === "und"){
+				if(this.$fn.type( item.show ) === "und" || this.$fn.type( item.show ) === "null"){
 					item.show = true
 				}else{//定义了  则不动
 			
@@ -68,14 +68,12 @@ export default {
 		
 		/* 只在组件外部使用 */
 		// 设置list的某个options（属性）       只在组件外部使用
-		_set(formInfo,fieldValue,keyStr,keyValue){//数组没意义
-		
-		
-			if(this.$fn.type(keyStr) == "obj"){//this._set(this.addApplyForm, "degreeType", { opt: data,xxx:xxx });
+		_set(formInfo,fieldValue,valueObj,keyValue){
+			if(this.$fn.type(valueObj) == "obj"){//this._set(this.addApplyForm, "degreeType", { opt: data,xxx:xxx });
 				formInfo.list.forEach((item)=>{
 					if(item.field == fieldValue){
-						for(let key of Object.keys(keyStr)){
-							item[key] = keyStr[key]
+						for(let key of Object.keys(valueObj)){
+							item[key] = valueObj[key]
 						}
 					}
 				})
@@ -83,46 +81,6 @@ export default {
 				this.$message.error("_set 值错误")
 			}
 			
-			
-			// if(this.$fn.type(keyStr) == "arr"){
-			// 	keyStr.forEach((i,index)=>{
-			// 		formInfo.list.forEach((item)=>{
-			// 			if(item.field == fieldValue){
-			// 				for(let key of Object.keys(keyStr[index])){
-			// 					item[key] = keyStr[index][key]
-			// 				}
-			// 			}
-			// 		})
-			// 	})
-			// }else if(this.$fn.type(keyStr) == "obj"){//this._set(this.addApplyForm, "degreeType", { opt: data,xxx:xxx });
-			// 	formInfo.list.forEach((item)=>{
-			// 		if(item.field == fieldValue){
-			// 			for(let key of Object.keys(keyStr)){
-			// 				item[key] = keyStr[key]
-			// 			}
-			// 		}
-			// 	})
-			// }else if(this.$fn.type(keyStr) == "str"){//这个也没用
-			// 	formInfo.list.forEach((item)=>{
-			// 		if(item.field == fieldValue){
-			// 			item[keyStr] = keyValue
-			// 		}
-			// 	})
-			// }
-			
-		},
-		// 根据后台数据给 form 的data  添加数据    只在组件外部使用 (已作废)
-		_setdata(formInfo, aysncData) {
-			// for (let key of Object.keys(aysncData)){
-			// 	formInfo.data[key] = aysncData[key]
-			// }
-			
-			// let item = this.$fn.deepClone(formInfo.data)
-			// for (let key of Object.keys(formInfo.data)){
-			// 	formInfo.data[key] = aysncData[key]
-			// }
-			
-			formInfo.data = aysncData
 		},
 	}
 }

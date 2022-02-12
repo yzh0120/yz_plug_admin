@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="panel" :class="addType">
-      <div class="panel-heading" @click="bodyHandle">
-        <slot name="head"></slot>
+      <div :class="[`panel-heading`]" @click="bodyHandle" :style="{fontSize:sizeComputed}">
+			<div  v-if="head">{{head}}</div>
+			<slot name="head"></slot>
       </div>
-      <div class="panel-body" :style="{display:showBody==true?'block':'none'}">
-        <slot></slot>
+      <div class="panel-body" :style="{height:height}">
+		<div  ref="innerBodyBody" style="padding: 15px;">
+			<slot></slot>
+		</div>
       </div>
     </div>
   </div>
@@ -19,38 +22,81 @@
 	danger
 	 -->
 <script>
-export default {
-  props: {
-    head: String,
-    type: {
-      type: String,
-      default: "primary"
-    },
-    close:{
-      default: false
-    }
-  },
-  computed:{
-	  addType(){
-		  return "panel-" + this.type
+	import elementResizeDetectorMaker from 'element-resize-detector'
+	export default {
+	  props: {
+		head: String,
+		type: {
+			type: String,
+			default: "primary"
+		},
+		close:{
+			default: false
+		},
+		size:{
+			type:String,
+			default: ""
+		}
 	  },
-  },
-  data() {
-    return {
-      showBody: true
-    };
-  },
-  mounted(){
-    if(this.close){
-      this.showBody = false
-    }
-  },
-  methods: {
-    bodyHandle() {
-      this.showBody = !this.showBody;
-    }
-  }
-};
+	  computed:{
+		  addType(){
+			  return "panel-" + this.type
+		  },
+		  sizeComputed(){
+			  let size = this.size
+			  if(size == "h1"){
+				  return  "32px"
+			  }else if(size == "h2"){
+				  return  "24px"
+			  }else if(size == "h3"){
+				  return  "18.72px"
+			  }
+		  },
+	  },
+	  data() {
+		return {
+		  showBody: true,
+		  height:"0px",
+		  count:0,
+		};
+	  },
+	  mounted(){
+		if(this.close){
+		  this.showBody = false
+		}
+		
+		const _this = this;
+		const erd = elementResizeDetectorMaker()
+		erd.listenTo(_this.$refs.innerBodyBody,(element)=>{
+			_this.$nextTick(()=>{
+				if(this.count === 0){
+					
+				}else{
+					if(this.showBody){
+						_this.height = element.offsetHeight+'px'
+					}else{
+						
+					}
+					
+				}
+				this.count++ 
+			})
+		})
+	  },
+	  methods: {
+		bodyHandle() {
+		  // 
+		  if(this.showBody){
+			  this.height = "0px"
+		  }else{
+			  this.height = this.$refs.innerBodyBody.offsetHeight+'px'
+		  }
+		  this.showBody = !this.showBody;
+		  console.log(this.showBody)
+		},
+		
+	  }
+	};
 </script>
     
 <style scoped lang="scss">
@@ -135,7 +181,8 @@ export default {
 	// justify-content: space-between;
   }
   .panel-body {
-    padding: 15px;
+	overflow: hidden;
+	transition: all .2s;
   }
 }
 </style>

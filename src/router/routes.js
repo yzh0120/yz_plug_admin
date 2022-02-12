@@ -10,14 +10,18 @@ import baseTable from "./modules/base-table.js"
 import baseForm from "./modules/base-form.js"
 import element from "./modules/element.js"
 import alert from "./modules/alert.js"
-import svgIcon from "./modules/svgIcon.js"
 import panel from "./modules/panel.js"
 import VCharts from "./modules/VCharts.js"
 import pageLayout from "./modules/pageLayout.js"
-import file from "./modules/file.js"
+import print from "./modules/print.js"
 import base from "./modules/base.js"
 import axios from "./modules/axios.js"
 import tabsView from "./modules/tabsView.js"
+import scoped from "./modules/scoped.js"
+import icon from "./modules/icon.js"
+import menu from "./modules/menu.js"
+import otherTable from "./modules/otherTable.js"
+import tabs from "./modules/tabs.js"
 
 import plug from "./modules/plug/index.js"
 
@@ -57,7 +61,7 @@ const routes = [
 			meta: {
 				title: '首页',
 				// hidden:true,
-				icon: 'shouye',
+				icon: 'dashboard',
 				fixed: true//"/base"//fullPath
 			}
 		}]
@@ -66,26 +70,30 @@ const routes = [
 	
 	
 
-
-	baseTable,//封装表格
+	scoped,//用户权限
+	
 	baseForm,//封装表单
+	baseTable,//封装表格
+	otherTable,//其他表格
 	alert,//弹窗
-	svgIcon,//svgIcon
+	// svgIcon,//svgIcon
 	panel,//折叠框
+	tabs,//切换框
 	VCharts,//图表
-	file, //文件
+	// file, //文件
 	axios,//axios
 	
 	pageLayout,//页面布局
 	
 	tabsView,//tabsView
 	element,//element
-	
+	icon,
+	print,
 	base,//基础
+	menu,//多级菜单
 	
 	
 	plug,
-	
 
 ]
 

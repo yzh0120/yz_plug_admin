@@ -1,13 +1,15 @@
 <template>
-  <div id="app"  v-loading="$store.state.axios.axiosLoading.loading" :element-loading-text="$store.state.axios.axiosLoading.text">
+  <!-- <div id="app"  v-loading="$store.state.axios.axiosLoading.loading" :element-loading-text="$store.state.axios.axiosLoading.text"> -->
+  <div id="app"  element-loading-text="路由加载中" v-loading="$store.state.router.elMainLoading">
 		<router-view />
 		
 		<el-drawer title="项目配置" :visible.sync="$store.state.setup.drawer" direction="rtl" :before-close="handleClose">
 			<div style="padding-left: 20px;">
 				<el-divider>选择主题</el-divider>
 				<el-radio-group v-model="$store.state.setup.navStyle">
-					<el-radio label="theme-nav">theme</el-radio>
+					<el-radio label="element-nav">element</el-radio>
 					<el-radio label="black-nav">black</el-radio>
+					<el-radio label="purple-nav">purple</el-radio>
 				</el-radio-group>
 			</div>
 		</el-drawer>

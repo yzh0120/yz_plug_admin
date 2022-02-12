@@ -18,9 +18,20 @@ export function download(params = {},path ) {
 
   let url = ""
   if (!path) {
-    return window.open(params.fileUrl)//后端抛出的下载链接
+    // return window.open(params.fileUrl)//后端抛出的下载链接
+	if (/.xls|.xlsx|.doc|.docx|.ppt|.pptx/g.test(params.fileUrl)) {
+	  var ele = `
+				   <iframe src='https://view.officeapps.live.com/op/view.aspx?src=${params.fileUrl}' width='100%' height='100%' frameborder='1'>
+				   </iframe>
+			   `;
+	  var newwindow = window.open(params.fileUrl, "_blank", '');
+	  newwindow.document.write(ele);
+	} else {
+	  window.open(params.fileUrl)
+	}
+	return;
   }else{
-	  url = path//二进制
+	  url = path//文件流
   }
 
   return new Promise((resolve, reject) => {

@@ -1,1 +1,0 @@
-border-top-left-radius: 300px;

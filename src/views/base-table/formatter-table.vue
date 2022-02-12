@@ -41,14 +41,14 @@
 				      field: "account",
 				      title: "格式化银行账号",
 					  format(x,y,cellValue){//重点
-					    return self.$fn.split(cellValue);
+					    return self.$fn.bankAccSplit(cellValue);
 					  },
 				    },
 				    {
 				      field: "Total_amount",
 				      title: "格式化总金额",
 					  format(x,y,cellValue){//重点
-					    return self.$fn.moneyFormat(cellValue);
+					    return self.$fn.num.qian(cellValue);
 					  },
 				    },
 				    {

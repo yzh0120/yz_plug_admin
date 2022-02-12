@@ -32,12 +32,13 @@
 					inline: true,
 				},
 				table: {
-					// width:"100px",
+					width:"100px",
+					autoWidth:true,
 				  head: [
 				    {
 				      field: "Bank_of_deposit",
 				      title: "开户行",
-					  // width:"400px"
+					  width:"400px"
 				    },
 				    {
 				      field: "account",

@@ -180,7 +180,7 @@ export async function post(url, data = {}, other = {}) {
 //最终的请求
 function realAxios(method, url, data = {}, other = {}) {
     let {
-        load={text:"正在加载中"},//加载对象 , 每次都会使用这个对象 所以必须有默认值,默认的text 是 "正在加载中"
+        load={text:"加载中..."},//加载对象 , 每次都会使用这个对象 所以必须有默认值,默认的text 是 "正在加载中"
         code = {}
     } = other
 	let {successCode = 200, needSuccessCode = true } = code
@@ -239,6 +239,7 @@ function realAxios(method, url, data = {}, other = {}) {
 let other ={
 	tip:'提示//删除提示
 	load =: {加载动画   存在obj,必定是区域加载
+		  no:true  不加载动画
 		  obj : this.tableData,
 		  // loading : 'loading',
 		  text
@@ -251,10 +252,14 @@ let other ={
 */
 // 某块区域的加载loading
 function toggleLoading(load, val,over) {
+	if(load && load.no){
+		return ;
+	}
     if (load && load.obj) {//例如table的loading
         load.loading = load.loading ? load.loading : 'loading'
         load.obj[load.loading] = val
-    }else{//整块区域加载
+    }else{//整块main区域加载
+	console.log(load.text,"load.text")
 		store.commit("axios/axiosLoading_Fn",
 			{
 				loading:val,

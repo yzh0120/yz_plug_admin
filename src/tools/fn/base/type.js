@@ -7,9 +7,14 @@ export default function (data){
 		return "num"
 	}else if (res == 'Boolean'){
 		return "boo"
-	}else if (res == 'Undefined' || res == 'Null'){
+	}
+	else if (res == 'Null'){
+		return "null"
+	}
+	else if (res == 'Undefined' || res == 'Null'){
 		return "und"
-	}else if (res == 'Object'){
+	}
+	else if (res == 'Object'){
 		return "obj"
 	}else if (res == 'Function'){
 		return "fn"

@@ -72,13 +72,18 @@
 		},
 		methods:{
 			width(item){
-				if(item.width){
-					return item.width
-				}else if(this.data.width){
-					return this.data.width
-				}else {
-					return "200px"
+				if(this.data.autoWidth){
+					return ""
+				}else{
+					if(item.width){
+						return item.width
+					}else if(this.data.width){
+						return this.data.width
+					}else {
+						return "200px"
+					}
 				}
+				
 			},
 		},
 		mounted(){

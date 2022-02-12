@@ -1,14 +1,15 @@
 
 
 .black-nav{
-	/*  
-    elementui主题， 如何动态设置scss变量的值？
-	https://www.h5w3.com/104106.html
-	
-	导航栏 */
-	$menuBg : #28333e;//背景色
+	/*
+	 CSS :root 声明全局变量,var()函数 (主题切换)
+		https://blog.csdn.net/qq_41560520/article/details/117918349?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1.no_search_link
+	 */
+	// 导航栏
+	$menuBg : black;//背景色
 	$color:#bfcbd9;//默认字体颜色
-	$primaryColor:rgb(64, 158, 255);
+	$primaryColor:#009688;
+	//侧边栏
 	.el-aside{
 		font-size: 14px;
 		font-weight: 500 ;
@@ -19,10 +20,42 @@
 			}
 		}
 	}
+	//main主体
+	.el-main{
+		$bgc : white;//rgb(248,248,248);
+		font-size: 14px;
+		background-color: $bgc;
+		.linkFixedPage{
+			background-color: $bgc;
+		}
+		#page.page.show{
+			background-color: $bgc;
+		}
+		$shadow:#ccc;
+		#page.page {
+			box-shadow: $shadow 0px 0px 10px;
+		}
+		.table-page{
+			box-shadow: $shadow 0px 0px 10px;
+		}
+		.linkFixedPage{
+			.left{
+				box-shadow: $shadow 0px 0px 10px;
+			}
+			.right{
+				box-shadow: $shadow 0px 0px 10px;
+			}
+		}
+		
+	}
     
 	
 	.sidebar-container {
 	    background-color: $menuBg  !important;//侧边栏背景色
+	}
+	/* logo标题 */
+	.sidebar-logo-container{
+		background-color:black;
 	}
 	.el-menu-item{//权重最低的 子叶选项         会被 //非一级的某行菜单栏 样式覆盖
 		font-weight: 500;//防止折叠的时候 字体是700
@@ -76,6 +109,15 @@
 	
 	/* tagView */
 	.tags-view-container{
+		//右键菜单
+		.contextmenu {
+			li {
+			  &:hover {
+			        background-color: #ecf5ff;
+			        color: $primaryColor !important;
+			  }
+			}
+		}
 		.tags-view-item{
 			display: inline-block;
 			position: relative;
@@ -160,92 +202,120 @@
 	}
 	/* head-top */
 	.head-top{
-		background-color: black;
-		.change_isCollapse{/* 折叠 */
-			color: white !important;
-		}
-		.el-breadcrumb{/* 面包屑 */
-			color: white !important;
-			*{
-				color: inherit !important;
-			}
-			.el-breadcrumb__item:hover>.el-breadcrumb__inner>a{
-				color: $primaryColor !important;
-			}
-			/* 最后一个面包屑 */
-			.el-breadcrumb__item:last-child>.el-breadcrumb__inner>a{
-				color: white  !important;
-			}
-			.el-breadcrumb__item:last-child:hover>.el-breadcrumb__inner>a{
-				color: white  !important;
-			}
-		}
-		.el-dropdown{
-			color: white !important;
-			*{
-				color: inherit !important;
-			}
-		}
+		// .el-breadcrumb{/* 面包屑 */
+		// 	color: $primaryColor !important;
+		// 	*{
+		// 		color: inherit !important;
+		// 	}
+		// 	.el-breadcrumb__item:hover>.el-breadcrumb__inner>a{
+		// 		color: $primaryColor !important;
+		// 	}
+		// 	/* 最后一个面包屑 */
+		// 	.el-breadcrumb__item:last-child>.el-breadcrumb__inner>a{
+		// 		color: $primaryColor  !important;
+		// 	}
+		// 	.el-breadcrumb__item:last-child:hover>.el-breadcrumb__inner>a{
+		// 		color: $primaryColor  !important;
+		// 	}
+		// }
+		// .el-dropdown{
+		// 	color: $primaryColor !important;
+		// 	*{
+		// 		color: inherit !important;
+		// 	}
+		// }
 		// 设置按钮
-		.setup{
-			color: white !important;
-			&:hover{
-				color: black !important;
-			}
-		}
+		// .setup{
+		// 	color: $primaryColor !important;
+		// 	&:hover{
+		// 		color: $primaryColor !important;
+		// 		background-color: #f6f6f6;
+		// 	}
+		// }
 	}
-	/* 标题 */
-	.sidebar-logo-container{
-		// background-color: $primaryColor;
+	/* ********************************************************************************************************
+	form组件
+	 */
+	.self_btn .el-input-group__append {
+		background-color: $primaryColor !important;
+		border: 1px solid $primaryColor !important;
+		border-left: 0 !important;
+		color: white !important;
+		 &:hover{
+			 color: white !important;
+		 }
+		 .el-button--default:not(.el-button--primary):active,
+		 .el-button--default:not(.el-button--primary):focus, 
+		 .el-button--default:not(.el-button--primary):hover{
+			 &{
+							 color: white !important;// 抵消换肤带来的副作用
+			 }
+		 }
 	}
-	/* element ui*/
-	 .el-button--primary, 
-	 .el-checkbox__input.is-checked .el-checkbox__inner, 
-	 .el-checkbox__input.is-indeterminate .el-checkbox__inner, 
-	 .el-pagination.is-background .el-pager li:not(.disabled).active, 
-	 .el-radio__input.is-checked .el-radio__inner, 
-	 .el-date-table td.current span,
-	 
-	 .el-switch.is-checked .el-switch__core {
-	    background: $primaryColor ;
-        border-color: $primaryColor ;
-	}
-	.el-textarea__inner:focus,
-	.el-input__inner:focus,
-	.el-checkbox__input:hover .el-checkbox__inner, 
-	.el-checkbox__input:visited .el-checkbox__inner, 
-	.el-checkbox__input.is-focus .el-checkbox__inner,
-	.el-select .el-input.is-focus .el-input__inner,
-	.el-select .el-input .el-input__inner:hover,
-	.el-radio__input:hover .el-radio__inner{
-		border-color: $primaryColor ;
-	}
-	 .el-select-dropdown__item.selected,
-	 .el-pagination.is-background .el-pager li:not(.disabled):hover,
-	 .el-button--default:not(.el-button--primary):active, 
-	 .el-button--default:not(.el-button--primary):focus, 
-	 .el-button--default:not(.el-button--primary):hover, 
-	 .el-button--text, 
-	 .el-cascader-node.in-active-path, 
-	 .el-cascader-node.is-active, 
-	 .el-cascader-node.is-selectable.in-checked-path, 
-	 .el-checkbox__input.is-checked+.el-checkbox__label, 
-	 .el-dropdown-menu__item:focus, 
-	 .el-dropdown-menu__item:not(.is-disabled):hover, 
-	 .el-loading-spinner .el-loading-text, 
-	 .el-loading-spinner i, 
-	 .el-radio-button__orig-radio:not(:checked)+.el-radio-button__inner:hover, 
-	 .el-radio__input.is-checked+.el-radio__label, 
-	 .el-tabs__item.is-active, 
-	 .el-tabs__item:hover, 
-	 .el-tag:not(.el-tag--danger):not(.el-tag--success):not(.el-tag--info):not(.el-tag--warning), 
-	 .el-upload--picture-card:hover, 
-	 .el-date-table td.today span,
-	 .el-date-table td:hover,
-	 .el-upload:focus {
-	    color: $primaryColor ;
-	}
-	.el-loading-spinner .path{
-		stroke:$primaryColor ;
-	}
+	/* ********************************************************************************************************* 
+	element ui*/
+	@import "@/scss/layout/style/global/element.scss";
+	// .el-tabs__active-bar{
+	// 	background-color: $primaryColor ;
+	// }
+	//  .el-button--primary, 
+	//  .el-checkbox__input.is-checked .el-checkbox__inner, 
+	//  .el-checkbox__input.is-indeterminate .el-checkbox__inner, 
+	//  .el-pagination.is-background .el-pager li:not(.disabled).active, 
+	//  .el-radio__input.is-checked .el-radio__inner, 
+	//  .el-date-table td.current span,
+	//  .available.in-range.start-date span,
+	//  .available.in-range.end-date span,
+	//  .el-switch.is-checked .el-switch__core {
+	//     background: $primaryColor ;
+	//     border-color: $primaryColor ;
+	// }
+	// .el-textarea__inner:focus,
+	// .el-input__inner:focus,
+	// .el-checkbox__input:hover .el-checkbox__inner, 
+	// .el-checkbox__input:visited .el-checkbox__inner, 
+	// .el-checkbox__input.is-focus .el-checkbox__inner,
+	// .el-select .el-input.is-focus .el-input__inner,
+	// .el-select .el-input .el-input__inner:hover,
+	// .el-button--default:not(.el-button--primary):active,
+	// .el-button--default:not(.el-button--primary):focus, 
+	// .el-button--default:not(.el-button--primary):hover,
+	// .el-radio__input:hover .el-radio__inner{
+	// 	border-color: $primaryColor ;
+	// }
+	//  .el-select-dropdown__item.selected,
+	//  .el-select-dropdown.is-multiple .el-select-dropdown__item.selected,
+	//  .el-pagination.is-background .el-pager li:not(.disabled):hover,
+	//  .el-button--default:not(.el-button--primary):active, 
+	//  .el-button--default:not(.el-button--primary):focus, 
+	//  .el-button--default:not(.el-button--primary):hover, 
+	//  .el-button--text, 
+	//  .el-cascader-node.in-active-path, 
+	//  .el-cascader-node.is-active, 
+	//  .el-cascader-node.is-selectable.in-checked-path, 
+	//  .el-checkbox__input.is-checked+.el-checkbox__label, 
+	//  .el-dropdown-menu__item:focus, 
+	//  .el-dropdown-menu__item:not(.is-disabled):hover, 
+	//  .el-loading-spinner .el-loading-text, 
+	//  .el-loading-spinner i, 
+	//  .el-radio-button__orig-radio:not(:checked)+.el-radio-button__inner:hover, 
+	//  .el-radio__input.is-checked+.el-radio__label, 
+	//  .el-tabs__item.is-active, 
+	//  .el-tabs__item:hover, 
+	//  .el-tag:not(.el-tag--danger):not(.el-tag--success):not(.el-tag--info):not(.el-tag--warning), 
+	//  .el-upload--picture-card:hover, 
+	//  .el-date-table td.today span,
+	//  .el-date-table td:hover,
+	//  .el-switch__label.el-switch__label--left.is-active,
+	//  .el-switch__label.el-switch__label--right.is-active,
+	//  .el-upload:focus {
+	//     color: $primaryColor ;
+	// }
+	// .el-loading-spinner .path{
+	// 	stroke:$primaryColor ;
+	// }
+	// // 抵消换肤带来的副作用
+	// .el-pagination.is-background .el-pager li.active:hover{
+	// 	color:white ;
+	// }
 }

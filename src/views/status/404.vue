@@ -30,7 +30,8 @@
  	name: 'noFound',
  	data(){
  		return {
- 			img404:require("@/assets/imgs/404.png")
+ 			// img404:require("@/assets/imgs/404.png")
+			img404:"https://s4.ax1x.com/2022/02/08/H1mupd.png"
  		}
  	},
  	methods: {

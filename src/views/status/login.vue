@@ -1,8 +1,8 @@
 <template>
 	<div :style="{width:$store.state.setup.window_innerWidth + `px`,height:$store.state.setup.window_innerHeight+ `px`}"
-		class="login" v-loading="loading">
+		class="login" v-loading="loading" element-loading-text="登录中">
 
-		<el-card style="width: 400px" class="card">
+		<el-card  class="card">
 			<div slot="header" >
 				<span>登录</span>
 			</div>
@@ -105,12 +105,14 @@
 		},
 		methods: {
 			doLogin() {
-				let other = {
-
-				};
+				// 在状态页面是用 axiosloading 失效  因为layout没加载
+				
 				//一点击登录按钮，这个方法就会执行 this.$store.state.native.user
-				this.$api.user.user_login(this.form, other).then(
+				this.loading = true
+				this.$api.user.user_login(this.form).then(
+				
 					(res) => {
+						this.loading = false
 						Cookie.set("token", res.token, res.time); //登录成功 存token
 						this.$store.commit("user/info_fn", res.data) //保存用户信息到 vuex
 
@@ -123,12 +125,13 @@
 						// });
 						// this._pageStack = temp
 						
-						console.log(123222)
+						
 						this.$router.push({
 								path: "/base",
 							});
 					},
 					(err) => {
+						this.loading = false
 						console.log(err);
 					}
 				);
@@ -155,14 +158,15 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: url("../../assets/imgs/bg-login.png") no-repeat;
+		// background: url("../../assets/imgs/bg-login.png") no-repeat;
+		background: url("https://s4.ax1x.com/2022/02/08/H1mQXt.md.png") no-repeat;
 		background-size: 100% 100%;
 		// background-position: center;
 		
 		.card{
 			position: relative;
 			z-index: 3;
-			
+			width: 400px;
 			.register {
 				margin-top: 10px;
 			  color: #409eff;
