@@ -17,6 +17,11 @@ Vue.use(new VueSocketIO({
   },
 }))
 
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+  ak: 'bNm1NF0Hri3kO9MLsYZRU5siYrMIS9GQ' //你申请的key
+})
+
 
 import common from  "@/scss/common/variable.scss"
 import layout from  "@/scss/layout/variable.scss"

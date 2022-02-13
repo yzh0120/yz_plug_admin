@@ -1,6 +1,10 @@
 let layout = () => import("@/layout/index.vue")
 
 import wangEdit from "./wangEdit.js"
+import swiper from "./swiper.js"
+import map from "./map.js"
+
+
 export default { 
     path: '/plug',//修改
     name: 'plug',//修改
@@ -11,5 +15,7 @@ export default {
     },
     children: [
 		wangEdit,
+		swiper,
+		map,
     ]
 }
